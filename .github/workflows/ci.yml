@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SKILL.md frontmatter
+        run: |
+          errors=0
+          for skill in skills/*/; do
+            skill_name=$(basename "$skill")
+            skill_file="${skill}SKILL.md"
+            if [ ! -f "$skill_file" ]; then
+              echo "❌ $skill_name: missing SKILL.md"
+              errors=$((errors + 1))
+              continue
+            fi
+            if ! grep -q '^---' "$skill_file"; then
+              echo "❌ $skill_name: SKILL.md missing frontmatter"
+              errors=$((errors + 1))
+            else
+              echo "✅ $skill_name: SKILL.md frontmatter OK"
+            fi
+          done
+          exit $errors
+
+      - name: Check README.md exists
+        run: |
+          errors=0
+          for skill in skills/*/; do
+            skill_name=$(basename "$skill")
+            if [ ! -f "${skill}README.md" ]; then
+              echo "❌ $skill_name: missing README.md"
+              errors=$((errors + 1))
+            else
+              echo "✅ $skill_name: README.md exists"
+            fi
+          done
+          exit $errors
+
+      - name: Check LICENSE exists
+        run: |
+          errors=0
+          for skill in skills/*/; do
+            skill_name=$(basename "$skill")
+            if [ ! -f "${skill}LICENSE" ]; then
+              echo "⚠️ $skill_name: missing LICENSE"
+            else
+              echo "✅ $skill_name: LICENSE exists"
+            fi
+          done
+          exit 0
+
+      - name: Validate Python skills
+        run: |
+          python_skills="bestie digital-self"
+          for skill_name in $python_skills; do
+            skill_dir="skills/$skill_name/"
+            if [ -f "${skill_dir}requirements.txt" ]; then
+              echo "✅ $skill_name: Python requirements.txt found"
+            fi
+            if [ -d "${skill_dir}tests" ]; then
+              echo "✅ $skill_name: tests directory found"
+            fi
+          done
