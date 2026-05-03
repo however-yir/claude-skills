@@ -25,17 +25,20 @@ mkdir -p ~/.claude/skills
 cp -r skills/ai-agent-workflow ~/.claude/skills/ai-agent-workflow
 ```
 
-## 原仓库归档
+## 原仓库迁移说明
 
-以下仓库已归档，后续更新只在本文档进行：
-- `codex-skill-ai-agent-workflow`
-- `codex-skill-local-ai-systems-studio`
-- `codex-skill-java-fullstack-engineering`
-- `codex-skill-github-job-showcase`
-- `codex-skill-xiaohongshu-content-studio`
-- `codex-skill-office-doc-presentation`
-- `digital-self-skill`
-- `bestie-skill`
+以下 8 个仓库已合并到本仓库，原仓库已删除：
+
+| 原仓库名 | 新位置 | 说明 |
+|----------|--------|------|
+| `codex-skill-ai-agent-workflow` | [skills/ai-agent-workflow](skills/ai-agent-workflow) | AI Agent 工作流 |
+| `codex-skill-local-ai-systems-studio` | [skills/local-ai-systems-studio](skills/local-ai-systems-studio) | 本地 LLM 部署 |
+| `codex-skill-java-fullstack-engineering` | [skills/java-fullstack-engineering](skills/java-fullstack-engineering) | Java 全栈工程 |
+| `codex-skill-github-job-showcase` | [skills/github-job-showcase](skills/github-job-showcase) | 求职作品集 |
+| `codex-skill-xiaohongshu-content-studio` | [skills/xiaohongshu-content-studio](skills/xiaohongshu-content-studio) | 小红书内容 |
+| `codex-skill-office-doc-presentation` | [skills/office-doc-presentation](skills/office-doc-presentation) | 办公文档 |
+| `digital-self-skill` | [skills/digital-self](skills/digital-self) | 数字分身 |
+| `bestie-skill` | [skills/bestie](skills/bestie) | 闺蜜 Skill |
 
 ## License
 
