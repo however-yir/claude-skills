@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  docs-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Basic repository checks
+        run: |
+          set -euo pipefail
+          if [[ -f README.md || -f Readme.md || -f readme.md ]]; then
+            echo "README found"
+          else
+            echo "::error::README is missing."
+            exit 1
+          fi
+          echo "Tracked files: $(git ls-files | wc -l)"

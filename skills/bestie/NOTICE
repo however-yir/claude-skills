@@ -1,0 +1,16 @@
+bestie-skill - Attribution Notice
+
+This project is adapted from:
+  https://github.com/titanwings/colleague-skill
+
+License:
+  MIT License (original project license retained in LICENSE)
+
+Adaptation summary:
+  - Renamed scenario from "colleague" to "bestie"
+  - Renamed command namespace and generated folder paths
+  - Kept overall structure, workflow, and tooling layout for compatibility
+
+Copyright:
+  Original: Copyright (c) 2025 titanwings
+  Modifications: Copyright (c) 2026 however-yir

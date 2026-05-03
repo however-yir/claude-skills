@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  python-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Python syntax check
+        run: |
+          set -euo pipefail
+          mapfile -t py_files < <(git ls-files '*.py')
+          if [[ ${#py_files[@]} -eq 0 ]]; then
+            echo "No Python files detected."
+            exit 0
+          fi
+          python -m py_compile "${py_files[@]}"

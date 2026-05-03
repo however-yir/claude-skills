@@ -1,0 +1,16 @@
+# Required
+requests>=2.33.1
+pytest>=8.0.0
+
+# Optional: Chinese name → slug conversion
+pypinyin>=0.55.0
+
+# Optional: Playwright for Feishu browser login / DingTalk message scraping
+playwright>=1.58.0
+
+# Optional: Slack auto collector
+slack-sdk>=3.41.0
+
+# Optional: Word/Excel parsing (convert to PDF/CSV first if unavailable)
+python-docx>=1.2.0
+openpyxl>=3.1.0

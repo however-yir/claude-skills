@@ -1,0 +1,21 @@
+{
+  "name": "闺蜜小米（示例）",
+  "slug": "example_mimi",
+  "created_at": "2026-03-30T00:00:00Z",
+  "updated_at": "2026-03-30T00:00:00Z",
+  "version": "v1",
+  "profile": {
+    "company": "字节跳动",
+    "level": "2-1",
+    "role": "后端工程师",
+    "gender": "女",
+    "mbti": "ENFJ"
+  },
+  "tags": {
+    "personality": ["靠谱", "直率", "行动快", "共情强"],
+    "culture": ["字节范", "结果导向"]
+  },
+  "impression": "沟通直接、反馈及时，愿意一起扛事，关键节点能稳定推进",
+  "knowledge_sources": [],
+  "corrections_count": 0
+}
