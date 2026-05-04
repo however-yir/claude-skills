@@ -1,6 +1,6 @@
 # Claude Skills Collection
 
-个人 Claude Code / Codex Skill 合集，原分散在 8 个独立仓库，现合并为统一入口。
+个人 Claude Code / Codex Skill 合集，原分散在 12 个独立仓库，现合并为统一入口。
 
 ## Skills 目录
 
@@ -15,6 +15,15 @@
 | [digital-self](skills/digital-self) | 个人工作流、表达风格、决策模式蒸馏为可复用数字分身 | 改编自 colleague-skill |
 | [bestie](skills/bestie) | 闺蜜/同事工作方法与人格蒸馏为可调用 AI Skill | 改编自 colleague-skill |
 
+## 工具与项目
+
+| 项目 | 说明 |
+|------|------|
+| [last30days-cn-skill](last30days-cn-skill/) | 中国社媒趋势分析（X、微博、小红书、抖音） |
+| [xhs-cover-studio](xhs-cover-studio/) | 小红书封面生成（DESIGN.md 模板 + 3 变体） |
+| [bishe-manual-skill](bishe-manual-skill/) | 中文毕业设计说明书撰写 Skill |
+| [lz-docforge](lz-docforge/) | DocForge：基于 Docling 的中文文档处理工程化 |
+
 ## 安装方式
 
 每个 Skill 目录独立，可直接复制到 Claude Code skills 目录使用：
@@ -27,7 +36,7 @@ cp -r skills/ai-agent-workflow ~/.claude/skills/ai-agent-workflow
 
 ## 原仓库迁移说明
 
-以下 8 个仓库已合并到本仓库，原仓库已删除：
+以下 12 个仓库已合并到本仓库：
 
 | 原仓库名 | 新位置 | 说明 |
 |----------|--------|------|
@@ -39,7 +48,12 @@ cp -r skills/ai-agent-workflow ~/.claude/skills/ai-agent-workflow
 | `codex-skill-office-doc-presentation` | [skills/office-doc-presentation](skills/office-doc-presentation) | 办公文档 |
 | `digital-self-skill` | [skills/digital-self](skills/digital-self) | 数字分身 |
 | `bestie-skill` | [skills/bestie](skills/bestie) | 闺蜜 Skill |
+| `last30days-cn-skill` | [last30days-cn-skill](last30days-cn-skill/) | 社媒趋势分析 |
+| `xhs-cover-studio` | [xhs-cover-studio](xhs-cover-studio/) | 小红书封面 |
+| `bishe-manual-skill` | [bishe-manual-skill](bishe-manual-skill/) | 毕设说明书 |
+| `lz-docforge` | [lz-docforge](lz-docforge/) | 文档炼金炉 |
 
 ## License
 
 各 Skill 保持其原有 License，详见子目录 LICENSE 文件。
+

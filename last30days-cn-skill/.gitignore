@@ -1,0 +1,31 @@
+# Private benchmark / evaluation artifacts — never push to upstream
+docs/comparison-results/
+scripts/evaluate-synthesis.py
+scripts/generate-synthesis-inputs.py
+fixtures/polymarket_sample.json
+docs/v2.1-tweets.md
+docs/30-day-anniversary-thread.md
+docs/30-day-anniversary-tweets.md
+variants/open/references/research.md
+
+# Vendor / dependency snapshots (not source of truth)
+vendor/
+scripts/lib/vendor/
+**/node_modules/
+
+# Generated runtime outputs
+assets/xhs_30days_share/
+test-run.log
+
+# Large assets moved to release/LFS
+assets/aging-portrait.jpeg
+assets/swimmom-mockup.jpeg
+assets/claude-code-rap.mp3
+
+# OS / tool files
+.DS_Store
+.claude/
+.entire/
+__pycache__/
+*.pyc
+mise.toml

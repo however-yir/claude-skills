@@ -1,0 +1,30 @@
+name: Security Lite Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+jobs:
+  secret-and-env-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ripgrep
+        run: sudo apt-get update && sudo apt-get install -y ripgrep
+
+      - name: Validate environment templates
+        run: python3 scripts/validate_env.py
+
+      - name: Run lightweight secret scan
+        run: bash scripts/check-secrets.sh

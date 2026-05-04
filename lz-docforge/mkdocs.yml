@@ -1,0 +1,231 @@
+site_name: DocForge
+site_url: https://however-yir.github.io/lz-docforge/
+repo_name: however-yir/lz-docforge
+repo_url: https://github.com/however-yir/lz-docforge
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    # Default dark mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+    # System preference (dark)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - announce.dismiss
+    - navigation.footer
+    - navigation.tabs
+    - navigation.indexes  # <= if set, each "section" can have its own page, if index.md is used
+    - navigation.instant
+    - navigation.instant.prefetch
+    # - navigation.instant.preview
+    - navigation.instant.progress
+    - navigation.path
+    # - navigation.sections  # <= if set, navigation menus will not collapse and expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - toc.follow
+nav:
+  - Documentation:
+    - Documentation: index.md
+    - Getting started : 
+      - Installation: getting_started/installation.md
+      - Quickstart: getting_started/quickstart.md
+      - ⚡ RTX GPU: getting_started/rtx.md
+    - Usage:
+      - Advanced options: usage/advanced_options.md
+      - Supported formats: usage/supported_formats.md
+      - Audio & video: usage/processing_audio_media.md
+      - Enrichment features: usage/enrichments.md
+      - Vision models: usage/vision_models.md
+      - Model catalog: usage/model_catalog.md
+      - GPU support: usage/gpu.md
+      - MCP server: usage/mcp.md
+      - Jobkit: usage/jobkit.md
+    - FAQ:
+      - FAQ: faq/index.md
+    - Project:
+      - Project docs index: project/index.md
+      - Branding docs: branding/index.md
+      - Branding settings: branding/github-repo-settings.md
+      - Migration guide: branding/migration-from-docling.md
+      - Config priority: branding/config-priority.md
+  - Concepts:
+    - Concepts: concepts/index.md
+    - Architecture: concepts/architecture.md
+    - Docling Document: concepts/docling_document.md
+    - Serialization: concepts/serialization.md
+    - Confidence Scores: concepts/confidence_scores.md
+    - Chunking: concepts/chunking.md
+    - Plugins: concepts/plugins.md
+  - Examples:
+    - Examples: examples/index.md
+    - 🔀 Conversion:
+      - "Simple conversion": examples/minimal.py
+      - "Custom conversion": examples/custom_convert.py
+      - "Batch conversion": examples/batch_convert.py
+      - "Multi-format conversion": examples/run_with_formats.py
+      - "VLM pipeline with GraniteDocling": examples/minimal_vlm_pipeline.py
+      - "VLM pipeline with remote model": examples/vlm_pipeline_api_model.py
+      - "VLM comparison": examples/compare_vlm_models.py
+      - "ASR pipeline with Whisper": examples/minimal_asr_pipeline.py
+      - "Figure export": examples/export_figures.py
+      - "Table export": examples/export_tables.py
+      - "Multimodal export": examples/export_multimodal.py
+      - "Force full page OCR": examples/full_page_ocr.py
+      - "Automatic OCR language detection with tesseract": examples/tesseract_lang_detection.py
+      - "RapidOCR with custom OCR models": examples/rapidocr_with_custom_models.py
+      - "SuryaOCR with custom OCR models": examples/suryaocr_with_custom_models.py
+      - "Accelerator options": examples/run_with_accelerator.py
+      - "Detect and obfuscate PII": examples/pii_obfuscate.py
+      - "Simple translation": examples/translate.py
+      - examples/backend_csv.ipynb
+      - examples/backend_xml_rag.ipynb
+      - examples/xbrl_conversion.ipynb
+    - ✂️ Serialization & chunking:
+      - examples/serialization.ipynb
+      - examples/hybrid_chunking.ipynb
+      - examples/line_based_chunking.ipynb
+      - examples/advanced_chunking_and_serialization.ipynb
+    - 📤 Information extraction:
+      - examples/extraction.ipynb
+    - 🤖 RAG with AI dev frameworks:
+      - examples/rag_haystack.ipynb
+      - examples/rag_langchain.ipynb
+      - examples/rag_llamaindex.ipynb
+      - examples/visual_grounding.ipynb
+    - 🖼️ Picture annotation:
+      - "Annotate picture with local VLM": examples/pictures_description.ipynb
+      - "Annotate picture with remote VLM": examples/pictures_description_api.py
+    - 🔤 Enrichments:
+      - "Code & formula": examples/code_formula_granite_docling.py
+    - ✨ Enrichment development:
+      - "Figure enrichment": examples/develop_picture_enrichment.py
+      - "Formula enrichment": examples/develop_formula_understanding.py
+      - "Enrich a DoclingDocument": examples/enrich_doclingdocument.py
+    - ⚡️ GPU optimization:
+      - "Standard pipeline": examples/gpu_standard_pipeline.py
+      - "VLM pipeline": examples/gpu_vlm_pipeline.py
+      - "Parquet benchmark": examples/parquet_images.py
+    - 🗂️ More examples:
+      - examples/dpk-ingest-chunk-tokenize.ipynb
+      - examples/rag_azuresearch.ipynb
+      - RAG with Granite [↗]: https://github.com/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/RAG/Granite_Docling_RAG.ipynb
+      - examples/rag_milvus.ipynb
+      - examples/rag_opensearch.ipynb
+      - examples/rag_weaviate.ipynb
+      - examples/retrieval_qdrant.ipynb
+      - examples/rag_mongodb.ipynb
+      - RAG with Vault PII transform [↗]: https://github.com/workloads/pathfinder-prism
+  - Integrations:
+    - Integrations: integrations/index.md
+    - 🤖 Agentic / AI dev frameworks:
+      - "Bee Agent Framework": integrations/bee.md
+      - "Crew AI": integrations/crewai.md
+      - "Haystack": integrations/haystack.md
+      - "Hector": integrations/hector.md
+      - "LangChain": integrations/langchain.md
+      - "Langflow": integrations/langflow.md
+      - "LlamaIndex": integrations/llamaindex.md
+      - "Semantica": integrations/semantica.md
+      - "txtai": integrations/txtai.md
+    - ⭐️ Featured:
+      - "Apify": integrations/apify.md
+      - "Data Prep Kit": integrations/data_prep_kit.md
+      - "InstructLab": integrations/instructlab.md
+      - "NVIDIA": integrations/nvidia.md
+      - "Prodigy": integrations/prodigy.md
+      - "RHEL AI": integrations/rhel_ai.md
+      - "spaCy": integrations/spacy.md
+    - 🗂️ More integrations:
+      - "Arconia": integrations/arconia.md
+      - "Cloudera": integrations/cloudera.md
+      - "DocETL": integrations/docetl.md
+      - "Kotaemon": integrations/kotaemon.md
+      - "OpenContracts": integrations/opencontracts.md
+      - "Open WebUI": integrations/openwebui.md
+      - "Quarkus": integrations/quarkus.md
+      - "Vectara": integrations/vectara.md
+  - Reference:
+    - Python API:
+      - Document Converter: reference/document_converter.md
+      - Pipeline options: reference/pipeline_options.md
+      - Docling Document: reference/docling_document.md
+    - CLI:
+      - CLI reference: reference/cli.md
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - mkdocs-click
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        getting_started/index.md: index.md
+        installation/index.md: getting_started/installation.md
+        usage/index.md: getting_started/quickstart.md
+  - mkdocs-jupyter
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            extensions:
+              - griffe_pydantic:
+                  schema: true
+            preload_modules:
+              - docling_core
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/however-yir/lz-docforge
+    - icon: fontawesome/brands/discord
+      link: https://docling.ai/discord
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/docling/
+  analytics:
+    provider: google
+    property: G-MP75NXFDH4

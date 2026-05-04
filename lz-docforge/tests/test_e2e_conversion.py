@@ -1,0 +1,69 @@
+from pathlib import Path
+
+from docling.datamodel.accelerator_options import AcceleratorDevice
+from docling.datamodel.base_models import InputFormat
+from docling.datamodel.document import ConversionResult
+from docling.datamodel.pipeline_options import PdfPipelineOptions
+from docling.document_converter import DocumentConverter, PdfFormatOption
+
+from .test_data_gen_flag import GEN_TEST_DATA
+from .verify_utils import verify_conversion_result_v2
+
+GENERATE_V2 = GEN_TEST_DATA
+
+SKIP_DOCTAGS_COMPARISON = ["2203.01017v2.pdf"]
+
+# PDFs that are tested separately in test_failed_pages.py (intentionally failing pages)
+SKIP_E2E_TEST = ["skipped_1page.pdf", "skipped_2pages.pdf"]
+
+
+def get_pdf_paths():
+    # Define the directory you want to search
+    directory = Path("./tests/data/pdf/")
+
+    # List all PDF files in the directory and its subdirectories
+    # Exclude PDFs that are tested separately for failure scenarios
+    pdf_files = sorted(
+        f for f in directory.rglob("*.pdf") if f.name not in SKIP_E2E_TEST
+    )
+    return pdf_files
+
+
+def get_converter():
+    pipeline_options = PdfPipelineOptions()
+    pipeline_options.do_ocr = False
+    pipeline_options.do_table_structure = True
+    pipeline_options.table_structure_options.do_cell_matching = True
+    pipeline_options.accelerator_options.device = AcceleratorDevice.CPU
+    pipeline_options.generate_parsed_pages = True
+
+    converter = DocumentConverter(
+        format_options={
+            InputFormat.PDF: PdfFormatOption(
+                pipeline_options=pipeline_options,
+                backend=PdfFormatOption().backend,
+            )
+        }
+    )
+
+    return converter
+
+
+def test_e2e_pdfs_conversions():
+    pdf_paths = get_pdf_paths()
+    converter = get_converter()
+
+    for pdf_path in pdf_paths:
+        print(f"converting {pdf_path}")
+
+        doc_result: ConversionResult = converter.convert(pdf_path)
+
+        # Decide if to skip doctags comparison
+        verify_doctags = pdf_path.name not in SKIP_DOCTAGS_COMPARISON
+
+        verify_conversion_result_v2(
+            input_path=pdf_path,
+            doc_result=doc_result,
+            generate=GENERATE_V2,
+            verify_doctags=verify_doctags,
+        )

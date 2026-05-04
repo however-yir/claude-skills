@@ -1,0 +1,8 @@
+interface:
+  display_name: "Trend Radar 30"
+  short_description: "Analyze the last 30 days of trends across X, Weibo, Xiaohongshu, and Douyin, then return a Chinese report."
+  default_prompt: "Analyze the most important trends from the last 30 days across X, Weibo, Xiaohongshu, and Douyin. Return a structured Chinese report with top trends, cross-platform insights, emerging signals, and key takeaways."
+  brand_color: "#E85D2A"
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docforge.actor/schemas/output-manifest.schema.json",
+  "title": "DocForge Actor Output Manifest",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "actor_name",
+    "generated_at",
+    "status",
+    "error_code",
+    "output",
+    "records",
+    "runtime",
+    "request"
+  ],
+  "properties": {
+    "manifest_version": {"type": "string"},
+    "actor_name": {"type": "string"},
+    "generated_at": {"type": "string"},
+    "status": {"type": "string", "enum": ["success", "error"]},
+    "error_code": {"type": "string"},
+    "error_message": {"type": ["string", "null"]},
+    "source_document_url": {"type": "string"},
+    "output": {
+      "type": "object",
+      "required": ["key", "url", "content_type", "size_bytes"],
+      "properties": {
+        "key": {"type": "string"},
+        "url": {"type": "string"},
+        "content_type": {"type": "string"},
+        "size_bytes": {"type": "integer", "minimum": 0}
+      }
+    },
+    "records": {
+      "type": "object",
+      "required": ["manifest_key", "log_key"],
+      "properties": {
+        "manifest_key": {"type": "string"},
+        "log_key": {"type": "string"}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["curl_exit_code"],
+      "properties": {
+        "curl_exit_code": {"type": "integer"}
+      }
+    },
+    "request": {
+      "type": "object",
+      "required": ["http_sources", "options"],
+      "properties": {
+        "http_sources": {"type": "array"},
+        "options": {"type": "object"}
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "XHS Cover Studio"
+  short_description: "Generate Xiaohongshu cover images from style templates"
+  default_prompt: "Generate 3 Xiaohongshu cover variants from my long copy using Apple style and export PNG files."

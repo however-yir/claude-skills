@@ -1,0 +1,56 @@
+{
+    "title": "DocForge Actor Dataset",
+    "description": "Records of document processing results from the DocForge Actor",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "url": {
+            "title": "Document URL",
+            "type": "string",
+            "description": "URL of the processed document"
+        },
+        "output_file": {
+            "title": "Result URL",
+            "type": "string",
+            "description": "Direct URL to the processed result in key-value store",
+            "optional": true
+        },
+        "manifest_file": {
+            "title": "Manifest URL",
+            "type": "string",
+            "description": "Direct URL to output manifest in key-value store",
+            "optional": true
+        },
+        "format": {
+            "title": "Output Format",
+            "type": "string",
+            "description": "Primary output artifact format",
+            "optional": true
+        },
+        "size": {
+            "title": "Output Size",
+            "type": "string",
+            "description": "Output size in bytes",
+            "optional": true
+        },
+        "status": {
+            "title": "Processing Status",
+            "type": "string",
+            "description": "Status of the document processing",
+            "enum": ["success", "error"]
+        },
+        "error_code": {
+            "title": "Error Code",
+            "type": "string",
+            "description": "Standardized processing error code",
+            "optional": true
+        },
+        "error": {
+            "title": "Error Details",
+            "type": "string",
+            "description": "Error message if processing failed",
+            "optional": true
+        }
+    },
+    "required": ["status"]
+} 

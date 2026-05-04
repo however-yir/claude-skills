@@ -1,0 +1,27 @@
+{
+  "title": "DocForge Actor Input",
+  "description": "Bilingual input schema for processing documents with DocForge via the docling-serve API.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "http_sources": {
+      "title": "Document URLs",
+      "type": "array",
+      "description": "URLs of documents to process. Supported formats: PDF, DOCX, PPTX, XLSX, HTML, MD, XML, images, and more.",
+      "editor": "json",
+      "prefill": [
+        { "url": "https://arxiv.org/pdf/2408.09869" }
+      ]
+    },    
+    "options": {
+      "title": "Processing Options",
+      "type": "object",
+      "description": "Document processing configuration options",
+      "editor": "json",
+      "prefill": {
+        "to_formats": ["md"]
+      }
+    }
+  },
+  "required": ["options", "http_sources"]
+}
