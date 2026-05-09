@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 讨论区
+    url: https://github.com/however-yir/claude-skills/discussions
+    about: 一般性问题和想法请到 Discussions 讨论
