@@ -1112,232 +1112,6 @@ wheels = [
 ]
 
 [[package]]
-name = "lz-docforge"
-version = "2.85.0"
-source = { editable = "." }
-dependencies = [
-    { name = "accelerate" },
-    { name = "beautifulsoup4" },
-    { name = "certifi" },
-    { name = "defusedxml" },
-    { name = "docling-core", extra = ["chunking"] },
-    { name = "docling-ibm-models" },
-    { name = "docling-parse" },
-    { name = "filetype" },
-    { name = "huggingface-hub" },
-    { name = "lxml" },
-    { name = "marko" },
-    { name = "ocrmac", marker = "sys_platform == 'darwin'" },
-    { name = "openpyxl" },
-    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "pandas", version = "3.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "pillow" },
-    { name = "pluggy" },
-    { name = "polyfactory" },
-    { name = "pydantic" },
-    { name = "pydantic-settings" },
-    { name = "pylatexenc" },
-    { name = "pypdfium2" },
-    { name = "python-docx" },
-    { name = "python-pptx" },
-    { name = "rapidocr" },
-    { name = "requests" },
-    { name = "rtree" },
-    { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "torch" },
-    { name = "torchvision" },
-    { name = "tqdm" },
-    { name = "typer" },
-]
-
-[package.optional-dependencies]
-asr = [
-    { name = "mlx-whisper", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
-    { name = "numba" },
-    { name = "openai-whisper" },
-]
-easyocr = [
-    { name = "easyocr" },
-]
-htmlrender = [
-    { name = "playwright" },
-]
-ocrmac = [
-    { name = "ocrmac", marker = "sys_platform == 'darwin'" },
-]
-onnxruntime = [
-    { name = "onnxruntime", marker = "python_full_version < '3.14' and sys_platform == 'darwin'" },
-    { name = "onnxruntime-gpu", marker = "(python_full_version < '3.14' and sys_platform == 'linux') or (python_full_version < '3.14' and sys_platform == 'win32')" },
-]
-rapidocr = [
-    { name = "onnxruntime", marker = "python_full_version < '3.14'" },
-    { name = "rapidocr" },
-]
-remote-serving = [
-    { name = "tritonclient", extra = ["grpc"] },
-]
-tesserocr = [
-    { name = "tesserocr" },
-]
-vlm = [
-    { name = "accelerate" },
-    { name = "mlx-vlm", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
-    { name = "qwen-vl-utils" },
-    { name = "transformers" },
-]
-xbrl = [
-    { name = "arelle-release" },
-]
-
-[package.dev-dependencies]
-constraints = [
-    { name = "langchain-core" },
-    { name = "numba" },
-    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "pandas", version = "3.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-]
-dev = [
-    { name = "boto3-stubs" },
-    { name = "coverage" },
-    { name = "ipykernel" },
-    { name = "ipywidgets" },
-    { name = "mypy" },
-    { name = "nbqa" },
-    { name = "pandas-stubs" },
-    { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-dependency" },
-    { name = "pytest-durations" },
-    { name = "pytest-xdist" },
-    { name = "python-semantic-release" },
-    { name = "types-defusedxml" },
-    { name = "types-openpyxl" },
-    { name = "types-requests" },
-    { name = "types-setuptools" },
-    { name = "types-tqdm" },
-    { name = "types-urllib3" },
-]
-docs = [
-    { name = "griffe-pydantic" },
-    { name = "mkdocs-click" },
-    { name = "mkdocs-jupyter" },
-    { name = "mkdocs-material" },
-    { name = "mkdocs-redirects" },
-    { name = "mkdocstrings", extra = ["python"] },
-]
-examples = [
-    { name = "datasets" },
-    { name = "gliner", marker = "python_full_version < '3.14'" },
-    { name = "langchain-huggingface" },
-    { name = "langchain-milvus" },
-    { name = "langchain-text-splitters" },
-    { name = "modelscope" },
-    { name = "python-dotenv" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "accelerate", specifier = ">=1.0.0,<2" },
-    { name = "accelerate", marker = "extra == 'vlm'", specifier = ">=1.2.1,<2.0.0" },
-    { name = "arelle-release", marker = "extra == 'xbrl'", specifier = ">=2.38.17,<3.0.0" },
-    { name = "beautifulsoup4", specifier = ">=4.12.3,<5.0.0" },
-    { name = "certifi", specifier = ">=2024.7.4" },
-    { name = "defusedxml", specifier = ">=0.7.1,<0.8.0" },
-    { name = "docling-core", extras = ["chunking"], specifier = ">=2.70.0,<3.0.0" },
-    { name = "docling-ibm-models", specifier = ">=3.13.0,<4" },
-    { name = "docling-parse", specifier = ">=5.3.2,<6.0.0" },
-    { name = "easyocr", marker = "extra == 'easyocr'", specifier = ">=1.7,<2.0" },
-    { name = "filetype", specifier = ">=1.2.0,<2.0.0" },
-    { name = "huggingface-hub", specifier = ">=0.23,<2" },
-    { name = "lxml", specifier = ">=4.0.0,<7.0.0" },
-    { name = "marko", specifier = ">=2.1.2,<3.0.0" },
-    { name = "mlx-vlm", marker = "python_full_version >= '3.10' and platform_machine == 'arm64' and sys_platform == 'darwin' and extra == 'vlm'", specifier = ">=0.3.0,<1.0.0" },
-    { name = "mlx-whisper", marker = "python_full_version >= '3.10' and platform_machine == 'arm64' and sys_platform == 'darwin' and extra == 'asr'", specifier = ">=0.4.3" },
-    { name = "numba", marker = "extra == 'asr'", specifier = ">=0.63.0" },
-    { name = "ocrmac", marker = "sys_platform == 'darwin'", specifier = ">=1.0.0,<2.0.0" },
-    { name = "ocrmac", marker = "sys_platform == 'darwin' and extra == 'ocrmac'", specifier = ">=1.0.0,<2.0.0" },
-    { name = "onnxruntime", marker = "python_full_version < '3.14' and extra == 'rapidocr'", specifier = ">=1.7.0,<2.0.0" },
-    { name = "onnxruntime", marker = "python_full_version < '3.14' and sys_platform == 'darwin' and extra == 'onnxruntime'", specifier = "<1.24" },
-    { name = "onnxruntime-gpu", marker = "(python_full_version < '3.14' and sys_platform == 'linux' and extra == 'onnxruntime') or (python_full_version < '3.14' and sys_platform == 'win32' and extra == 'onnxruntime')", specifier = "<1.24" },
-    { name = "openai-whisper", marker = "extra == 'asr'", specifier = ">=20250625" },
-    { name = "openpyxl", specifier = ">=3.1.5,<4.0.0" },
-    { name = "pandas", specifier = ">=2.1.4,<4.0.0" },
-    { name = "pillow", specifier = ">=10.0.0,<13.0.0" },
-    { name = "playwright", marker = "extra == 'htmlrender'", specifier = ">=1.58.0" },
-    { name = "pluggy", specifier = ">=1.0.0,<2.0.0" },
-    { name = "polyfactory", specifier = ">=2.22.2" },
-    { name = "pydantic", specifier = ">=2.0.0,<3.0.0" },
-    { name = "pydantic-settings", specifier = ">=2.3.0,<3.0.0" },
-    { name = "pylatexenc", specifier = ">=2.10,<3.0" },
-    { name = "pypdfium2", specifier = ">=4.30.0,!=4.30.1,<6.0.0" },
-    { name = "python-docx", specifier = ">=1.1.2,<2.0.0" },
-    { name = "python-pptx", specifier = ">=1.0.2,<2.0.0" },
-    { name = "qwen-vl-utils", marker = "extra == 'vlm'", specifier = ">=0.0.11" },
-    { name = "rapidocr", specifier = ">=3.3,<4.0.0" },
-    { name = "rapidocr", marker = "extra == 'rapidocr'", specifier = ">=3.3,<4.0.0" },
-    { name = "requests", specifier = ">=2.32.2,<3.0.0" },
-    { name = "rtree", specifier = ">=1.3.0,<2.0.0" },
-    { name = "scipy", specifier = ">=1.6.0,<2.0.0" },
-    { name = "tesserocr", marker = "extra == 'tesserocr'", specifier = ">=2.7.1,<3.0.0" },
-    { name = "torch", specifier = ">=2.2.2,<3.0.0" },
-    { name = "torchvision", specifier = ">=0,<1" },
-    { name = "tqdm", specifier = ">=4.65.0,<5.0.0" },
-    { name = "transformers", marker = "extra == 'vlm'", specifier = ">=4.42.0,!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*,<6.0.0" },
-    { name = "tritonclient", extras = ["grpc"], marker = "extra == 'remote-serving'", specifier = ">=2.65.0,<3.0.0" },
-    { name = "typer", specifier = ">=0.12.5,<0.22.0" },
-]
-provides-extras = ["easyocr", "tesserocr", "ocrmac", "htmlrender", "vlm", "rapidocr", "onnxruntime", "asr", "xbrl", "remote-serving"]
-
-[package.metadata.requires-dev]
-constraints = [
-    { name = "langchain-core", specifier = ">=0.3.81" },
-    { name = "numba", specifier = ">=0.63.0" },
-    { name = "pandas", marker = "python_full_version < '3.11'", specifier = ">=2.1.4,<3.0.0" },
-    { name = "pandas", marker = "python_full_version >= '3.11'", specifier = ">=2.1.4,<4.0.0" },
-]
-dev = [
-    { name = "boto3-stubs", specifier = "~=1.37" },
-    { name = "coverage", specifier = "~=7.6" },
-    { name = "ipykernel", specifier = "~=6.29" },
-    { name = "ipywidgets", specifier = "~=8.1" },
-    { name = "mypy", specifier = "~=1.10" },
-    { name = "nbqa", specifier = "~=1.9" },
-    { name = "pandas-stubs", specifier = "~=2.1" },
-    { name = "pre-commit", specifier = "~=3.7" },
-    { name = "pytest", specifier = "~=8.3" },
-    { name = "pytest-cov", specifier = ">=6.1.1" },
-    { name = "pytest-dependency", specifier = "~=0.6" },
-    { name = "pytest-durations", specifier = "~=1.6.1" },
-    { name = "pytest-xdist", specifier = "~=3.3" },
-    { name = "python-semantic-release", specifier = "~=7.32" },
-    { name = "types-defusedxml", specifier = ">=0.7.0.20250822,<0.8.0" },
-    { name = "types-openpyxl", specifier = "~=3.1" },
-    { name = "types-requests", specifier = "~=2.31" },
-    { name = "types-setuptools", specifier = "~=70.3" },
-    { name = "types-tqdm", specifier = "~=4.67" },
-    { name = "types-urllib3", specifier = "~=1.26" },
-]
-docs = [
-    { name = "griffe-pydantic", specifier = "~=1.1" },
-    { name = "mkdocs-click", specifier = "~=0.8" },
-    { name = "mkdocs-jupyter", specifier = ">=0.25,<0.26" },
-    { name = "mkdocs-material", specifier = "~=9.5" },
-    { name = "mkdocs-redirects", specifier = "~=1.2" },
-    { name = "mkdocstrings", extras = ["python"], specifier = "~=0.27" },
-]
-examples = [
-    { name = "datasets", specifier = "~=2.21" },
-    { name = "gliner", marker = "python_full_version < '3.14'", specifier = ">=0.2.21" },
-    { name = "langchain-huggingface", specifier = ">=0.0.3" },
-    { name = "langchain-milvus", specifier = "~=0.1" },
-    { name = "langchain-text-splitters", specifier = ">=0.2" },
-    { name = "modelscope", specifier = ">=1.29.0" },
-    { name = "python-dotenv", specifier = "~=1.0" },
-]
-
-[[package]]
 name = "docling-core"
 version = "2.70.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2764,6 +2538,232 @@ wheels = [
 ]
 
 [[package]]
+name = "lz-docforge"
+version = "2.85.0"
+source = { editable = "." }
+dependencies = [
+    { name = "accelerate" },
+    { name = "beautifulsoup4" },
+    { name = "certifi" },
+    { name = "defusedxml" },
+    { name = "docling-core", extra = ["chunking"] },
+    { name = "docling-ibm-models" },
+    { name = "docling-parse" },
+    { name = "filetype" },
+    { name = "huggingface-hub" },
+    { name = "lxml" },
+    { name = "marko" },
+    { name = "ocrmac", marker = "sys_platform == 'darwin'" },
+    { name = "openpyxl" },
+    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "pandas", version = "3.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "pillow" },
+    { name = "pluggy" },
+    { name = "polyfactory" },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
+    { name = "pylatexenc" },
+    { name = "pypdfium2" },
+    { name = "python-docx" },
+    { name = "python-pptx" },
+    { name = "rapidocr" },
+    { name = "requests" },
+    { name = "rtree" },
+    { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "torch" },
+    { name = "torchvision" },
+    { name = "tqdm" },
+    { name = "typer" },
+]
+
+[package.optional-dependencies]
+asr = [
+    { name = "mlx-whisper", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
+    { name = "numba" },
+    { name = "openai-whisper" },
+]
+easyocr = [
+    { name = "easyocr" },
+]
+htmlrender = [
+    { name = "playwright" },
+]
+ocrmac = [
+    { name = "ocrmac", marker = "sys_platform == 'darwin'" },
+]
+onnxruntime = [
+    { name = "onnxruntime", marker = "python_full_version < '3.14' and sys_platform == 'darwin'" },
+    { name = "onnxruntime-gpu", marker = "(python_full_version < '3.14' and sys_platform == 'linux') or (python_full_version < '3.14' and sys_platform == 'win32')" },
+]
+rapidocr = [
+    { name = "onnxruntime", marker = "python_full_version < '3.14'" },
+    { name = "rapidocr" },
+]
+remote-serving = [
+    { name = "tritonclient", extra = ["grpc"] },
+]
+tesserocr = [
+    { name = "tesserocr" },
+]
+vlm = [
+    { name = "accelerate" },
+    { name = "mlx-vlm", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
+    { name = "qwen-vl-utils" },
+    { name = "transformers" },
+]
+xbrl = [
+    { name = "arelle-release" },
+]
+
+[package.dev-dependencies]
+constraints = [
+    { name = "langchain-core" },
+    { name = "numba" },
+    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "pandas", version = "3.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+]
+dev = [
+    { name = "boto3-stubs" },
+    { name = "coverage" },
+    { name = "ipykernel" },
+    { name = "ipywidgets" },
+    { name = "mypy" },
+    { name = "nbqa" },
+    { name = "pandas-stubs" },
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-dependency" },
+    { name = "pytest-durations" },
+    { name = "pytest-xdist" },
+    { name = "python-semantic-release" },
+    { name = "types-defusedxml" },
+    { name = "types-openpyxl" },
+    { name = "types-requests" },
+    { name = "types-setuptools" },
+    { name = "types-tqdm" },
+    { name = "types-urllib3" },
+]
+docs = [
+    { name = "griffe-pydantic" },
+    { name = "mkdocs-click" },
+    { name = "mkdocs-jupyter" },
+    { name = "mkdocs-material" },
+    { name = "mkdocs-redirects" },
+    { name = "mkdocstrings", extra = ["python"] },
+]
+examples = [
+    { name = "datasets" },
+    { name = "gliner", marker = "python_full_version < '3.14'" },
+    { name = "langchain-huggingface" },
+    { name = "langchain-milvus" },
+    { name = "langchain-text-splitters" },
+    { name = "modelscope" },
+    { name = "python-dotenv" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "accelerate", specifier = ">=1.0.0,<2" },
+    { name = "accelerate", marker = "extra == 'vlm'", specifier = ">=1.2.1,<2.0.0" },
+    { name = "arelle-release", marker = "extra == 'xbrl'", specifier = ">=2.38.17,<3.0.0" },
+    { name = "beautifulsoup4", specifier = ">=4.12.3,<5.0.0" },
+    { name = "certifi", specifier = ">=2024.7.4" },
+    { name = "defusedxml", specifier = ">=0.7.1,<0.8.0" },
+    { name = "docling-core", extras = ["chunking"], specifier = ">=2.70.0,<3.0.0" },
+    { name = "docling-ibm-models", specifier = ">=3.13.0,<4" },
+    { name = "docling-parse", specifier = ">=5.3.2,<6.0.0" },
+    { name = "easyocr", marker = "extra == 'easyocr'", specifier = ">=1.7,<2.0" },
+    { name = "filetype", specifier = ">=1.2.0,<2.0.0" },
+    { name = "huggingface-hub", specifier = ">=0.23,<2" },
+    { name = "lxml", specifier = ">=4.0.0,<7.0.0" },
+    { name = "marko", specifier = ">=2.1.2,<3.0.0" },
+    { name = "mlx-vlm", marker = "python_full_version >= '3.10' and platform_machine == 'arm64' and sys_platform == 'darwin' and extra == 'vlm'", specifier = ">=0.3.0,<1.0.0" },
+    { name = "mlx-whisper", marker = "python_full_version >= '3.10' and platform_machine == 'arm64' and sys_platform == 'darwin' and extra == 'asr'", specifier = ">=0.4.3" },
+    { name = "numba", marker = "extra == 'asr'", specifier = ">=0.63.0" },
+    { name = "ocrmac", marker = "sys_platform == 'darwin'", specifier = ">=1.0.0,<2.0.0" },
+    { name = "ocrmac", marker = "sys_platform == 'darwin' and extra == 'ocrmac'", specifier = ">=1.0.0,<2.0.0" },
+    { name = "onnxruntime", marker = "python_full_version < '3.14' and extra == 'rapidocr'", specifier = ">=1.7.0,<2.0.0" },
+    { name = "onnxruntime", marker = "python_full_version < '3.14' and sys_platform == 'darwin' and extra == 'onnxruntime'", specifier = "<1.24" },
+    { name = "onnxruntime-gpu", marker = "(python_full_version < '3.14' and sys_platform == 'linux' and extra == 'onnxruntime') or (python_full_version < '3.14' and sys_platform == 'win32' and extra == 'onnxruntime')", specifier = "<1.24" },
+    { name = "openai-whisper", marker = "extra == 'asr'", specifier = ">=20250625" },
+    { name = "openpyxl", specifier = ">=3.1.5,<4.0.0" },
+    { name = "pandas", specifier = ">=2.1.4,<4.0.0" },
+    { name = "pillow", specifier = ">=10.0.0,<13.0.0" },
+    { name = "playwright", marker = "extra == 'htmlrender'", specifier = ">=1.58.0" },
+    { name = "pluggy", specifier = ">=1.0.0,<2.0.0" },
+    { name = "polyfactory", specifier = ">=2.22.2" },
+    { name = "pydantic", specifier = ">=2.0.0,<3.0.0" },
+    { name = "pydantic-settings", specifier = ">=2.3.0,<3.0.0" },
+    { name = "pylatexenc", specifier = ">=2.10,<3.0" },
+    { name = "pypdfium2", specifier = ">=4.30.0,!=4.30.1,<6.0.0" },
+    { name = "python-docx", specifier = ">=1.1.2,<2.0.0" },
+    { name = "python-pptx", specifier = ">=1.0.2,<2.0.0" },
+    { name = "qwen-vl-utils", marker = "extra == 'vlm'", specifier = ">=0.0.11" },
+    { name = "rapidocr", specifier = ">=3.3,<4.0.0" },
+    { name = "rapidocr", marker = "extra == 'rapidocr'", specifier = ">=3.3,<4.0.0" },
+    { name = "requests", specifier = ">=2.32.2,<3.0.0" },
+    { name = "rtree", specifier = ">=1.3.0,<2.0.0" },
+    { name = "scipy", specifier = ">=1.6.0,<2.0.0" },
+    { name = "tesserocr", marker = "extra == 'tesserocr'", specifier = ">=2.7.1,<3.0.0" },
+    { name = "torch", specifier = ">=2.2.2,<3.0.0" },
+    { name = "torchvision", specifier = ">=0,<1" },
+    { name = "tqdm", specifier = ">=4.65.0,<5.0.0" },
+    { name = "transformers", marker = "extra == 'vlm'", specifier = ">=4.42.0,!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*,<6.0.0" },
+    { name = "tritonclient", extras = ["grpc"], marker = "extra == 'remote-serving'", specifier = ">=2.65.0,<3.0.0" },
+    { name = "typer", specifier = ">=0.12.5,<0.22.0" },
+]
+provides-extras = ["easyocr", "tesserocr", "ocrmac", "htmlrender", "vlm", "rapidocr", "onnxruntime", "asr", "xbrl", "remote-serving"]
+
+[package.metadata.requires-dev]
+constraints = [
+    { name = "langchain-core", specifier = ">=0.3.81" },
+    { name = "numba", specifier = ">=0.63.0" },
+    { name = "pandas", marker = "python_full_version < '3.11'", specifier = ">=2.1.4,<3.0.0" },
+    { name = "pandas", marker = "python_full_version >= '3.11'", specifier = ">=2.1.4,<4.0.0" },
+]
+dev = [
+    { name = "boto3-stubs", specifier = "~=1.37" },
+    { name = "coverage", specifier = "~=7.6" },
+    { name = "ipykernel", specifier = "~=6.29" },
+    { name = "ipywidgets", specifier = "~=8.1" },
+    { name = "mypy", specifier = "~=1.10" },
+    { name = "nbqa", specifier = "~=1.9" },
+    { name = "pandas-stubs", specifier = "~=2.1" },
+    { name = "pre-commit", specifier = "~=3.7" },
+    { name = "pytest", specifier = "~=8.3" },
+    { name = "pytest-cov", specifier = ">=6.1.1" },
+    { name = "pytest-dependency", specifier = "~=0.6" },
+    { name = "pytest-durations", specifier = "~=1.6.1" },
+    { name = "pytest-xdist", specifier = "~=3.3" },
+    { name = "python-semantic-release", specifier = "~=7.32" },
+    { name = "types-defusedxml", specifier = ">=0.7.0.20250822,<0.8.0" },
+    { name = "types-openpyxl", specifier = "~=3.1" },
+    { name = "types-requests", specifier = "~=2.31" },
+    { name = "types-setuptools", specifier = "~=70.3" },
+    { name = "types-tqdm", specifier = "~=4.67" },
+    { name = "types-urllib3", specifier = "~=1.26" },
+]
+docs = [
+    { name = "griffe-pydantic", specifier = "~=1.1" },
+    { name = "mkdocs-click", specifier = "~=0.8" },
+    { name = "mkdocs-jupyter", specifier = ">=0.25,<0.26" },
+    { name = "mkdocs-material", specifier = "~=9.5" },
+    { name = "mkdocs-redirects", specifier = "~=1.2" },
+    { name = "mkdocstrings", extras = ["python"], specifier = "~=0.27" },
+]
+examples = [
+    { name = "datasets", specifier = "~=2.21" },
+    { name = "gliner", marker = "python_full_version < '3.14'", specifier = ">=0.2.21" },
+    { name = "langchain-huggingface", specifier = ">=0.0.3" },
+    { name = "langchain-milvus", specifier = "~=0.1" },
+    { name = "langchain-text-splitters", specifier = ">=0.2" },
+    { name = "modelscope", specifier = ">=1.29.0" },
+    { name = "python-dotenv", specifier = "~=1.0" },
+]
+
+[[package]]
 name = "markdown"
 version = "3.10.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2937,14 +2937,14 @@ wheels = [
 
 [[package]]
 name = "mistune"
-version = "3.2.0"
+version = "3.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "typing-extensions", marker = "python_full_version < '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9d/55/d01f0c4b45ade6536c51170b9043db8b2ec6ddf4a35c7ea3f5f559ac935b/mistune-3.2.0.tar.gz", hash = "sha256:708487c8a8cdd99c9d90eb3ed4c3ed961246ff78ac82f03418f5183ab70e398a", size = 95467, upload-time = "2025-12-23T11:36:34.994Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ca/84/620cc3f7e3adf6f5067e10f4dbae71295d8f9e16d5d3f9ef97c40f2f592c/mistune-3.2.1.tar.gz", hash = "sha256:7c8e5501d38bac1582e067e46c8343f17d57ea1aaa735823f3aba1fd59c88a28", size = 98003, upload-time = "2026-05-03T14:33:22.312Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9b/f7/4a5e785ec9fbd65146a27b6b70b6cdc161a66f2024e4b04ac06a67f5578b/mistune-3.2.0-py3-none-any.whl", hash = "sha256:febdc629a3c78616b94393c6580551e0e34cc289987ec6c35ed3f4be42d0eee1", size = 53598, upload-time = "2025-12-23T11:36:33.211Z" },
+    { url = "https://files.pythonhosted.org/packages/2a/7f/a946aa4f8752b37102b41e64dca18a1976ac705c3a0d1dfe74d820a02552/mistune-3.2.1-py3-none-any.whl", hash = "sha256:78cdb0ba5e938053ccf63651b352508d2efa9411dc8810bfb05f2dc5140c0048", size = 53749, upload-time = "2026-05-03T14:33:20.551Z" },
 ]
 
 [[package]]
