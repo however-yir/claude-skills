@@ -5,6 +5,21 @@
 
 适用于 **Codex / Claude Code** 双平台的 Java 全栈工程技能。聚焦 Spring Boot、MyBatis/JPA、SQL 优化、API 规范、前后端联调与面试级项目加固。
 
+## Skill Card
+
+- 用途：处理 Java 全栈项目的开发、调试、重构、SQL 优化、API 规范和面试级工程加固。
+- 触发场景：用户提到 Spring Boot、MyBatis/JPA、慢 SQL、接口联调、管理后台、项目加固、代码审查或 Java 项目面试包装。
+- 安装：从本仓库根目录执行。
+
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/java-fullstack-engineering ~/.claude/skills/java-fullstack-engineering
+cp -R skills/java-fullstack-engineering ~/.codex/skills/java-fullstack-engineering
+```
+
+- 测试：纯知识 skill；维护检查为 `SKILL.md` frontmatter、`README.md`、`LICENSE`。
+- 示例 prompt：`帮我审这个 Spring Boot 接口和 MyBatis 查询，指出性能风险并给出最小修改方案。`
+
 ## 目录
 
 - [1. 项目概述](#1-项目概述)
@@ -38,11 +53,13 @@
 
 ## 4. Quick Start
 
-**Codex**：在 skill 市场中搜索 `java-fullstack-engineering` 一键安装。
+**Claude Code / Codex**：从本合集仓库根目录复制 skill 目录。
 
-**Claude Code**：将本仓库克隆到 skills 目录或通过 plugin 加载：
-
-    git clone https://github.com/however-yir/codex-skill-java-fullstack-engineering.git
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/java-fullstack-engineering ~/.claude/skills/java-fullstack-engineering
+cp -R skills/java-fullstack-engineering ~/.codex/skills/java-fullstack-engineering
+```
 
 ## 5. License
 

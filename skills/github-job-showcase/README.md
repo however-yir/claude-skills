@@ -5,6 +5,21 @@
 
 适用于 **Codex / Claude Code** 双平台的 GitHub 项目求职展示技能。聚焦 README 重写、项目亮点提炼、简历项目描述与面试话术生成。
 
+## Skill Card
+
+- 用途：把 GitHub 项目整理成求职、实习、面试或公开 portfolio 可用的展示材料。
+- 触发场景：用户要改 README、提炼项目亮点、写简历 bullets、准备项目介绍话术，或包装课程/毕业设计项目。
+- 安装：从本仓库根目录执行。
+
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/github-job-showcase ~/.claude/skills/github-job-showcase
+cp -R skills/github-job-showcase ~/.codex/skills/github-job-showcase
+```
+
+- 测试：纯知识 skill；维护检查为 `SKILL.md` frontmatter、`README.md`、`LICENSE`。
+- 示例 prompt：`帮我把这个仓库包装成校招项目 README，并生成 4 条简历项目经历。`
+
 ## 目录
 
 - [1. 项目概述](#1-项目概述)
@@ -37,11 +52,13 @@
 
 ## 4. Quick Start
 
-**Codex**：在 skill 市场中搜索 `github-job-showcase` 一键安装。
+**Claude Code / Codex**：从本合集仓库根目录复制 skill 目录。
 
-**Claude Code**：将本仓库克隆到 skills 目录或通过 plugin 加载：
-
-    git clone https://github.com/however-yir/codex-skill-github-job-showcase.git
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/github-job-showcase ~/.claude/skills/github-job-showcase
+cp -R skills/github-job-showcase ~/.codex/skills/github-job-showcase
+```
 
 ## 5. License
 

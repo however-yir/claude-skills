@@ -5,6 +5,21 @@
 
 适用于 **Codex / Claude Code** 双平台的 AI 工程工作流技能。聚焦技能化方法沉淀，通过标准化模板帮助团队复用工作流与最佳实践。
 
+## Skill Card
+
+- 用途：设计和改进可复用 AI 工程工作流，包括 prompt pipeline、MCP 集成、工具型 agent、评估循环和 workflow spec。
+- 触发场景：用户要做 agent 架构、prompt 工作流、MCP 方案、评估闭环，或想把一次性 AI 任务沉淀成长期流程。
+- 安装：从本仓库根目录执行。
+
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/ai-agent-workflow ~/.claude/skills/ai-agent-workflow
+cp -R skills/ai-agent-workflow ~/.codex/skills/ai-agent-workflow
+```
+
+- 测试：纯知识 skill；维护检查为 `SKILL.md` frontmatter、`README.md`、`LICENSE`。
+- 示例 prompt：`帮我把这个客服质检流程设计成可复用的 AI agent 工作流，并给出评估闭环。`
+
 ## 目录
 
 - [1. 项目概述](#1-项目概述)
@@ -55,11 +70,13 @@
 
 ## 6. Quick Start
 
-**Codex**：在 skill 市场中搜索 `ai-agent-workflow` 一键安装。
+**Claude Code / Codex**：从本合集仓库根目录复制 skill 目录。
 
-**Claude Code**：将本仓库克隆到 skills 目录或通过 plugin 加载：
-
-    git clone https://github.com/however-yir/codex-skill-ai-agent-workflow.git
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/ai-agent-workflow ~/.claude/skills/ai-agent-workflow
+cp -R skills/ai-agent-workflow ~/.codex/skills/ai-agent-workflow
+```
 
 ## 7. 配置建议
 

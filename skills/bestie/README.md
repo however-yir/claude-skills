@@ -37,6 +37,21 @@
 
 ---
 
+## Skill Card
+
+- 用途：将搭子、同事或关键协作者的工作方法、表达风格和决策习惯蒸馏成可调用 AI Skill。
+- 触发场景：用户要保留交接经验、复用某人的判断标准，或用飞书、钉钉、Slack、邮件、截图等材料生成协作型 persona + work skill。
+- 安装：从本仓库根目录执行。
+
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/bestie ~/.claude/skills/bestie
+cp -R skills/bestie ~/.codex/skills/bestie
+```
+
+- 测试：`cd skills/bestie && pytest tests/`
+- 示例 prompt：`/create-bestie 帮我把这位后端搭子的飞书记录和项目规范整理成可调用的协作 skill。`
+
 ### 改编说明（License）
 
 本项目基于 [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill) 按 **MIT License** 改编。
@@ -87,18 +102,20 @@
 > **重要**：Claude Code 从 **git 仓库根目录** 的 `.claude/skills/` 查找 skill。请在正确的位置执行。
 
 ```bash
-# 安装到当前项目（在 git 仓库根目录执行）
+# 安装到当前项目（在本合集仓库根目录执行）
 mkdir -p .claude/skills
-git clone https://github.com/however-yir/bestie-skill .claude/skills/create-bestie
+cp -R skills/bestie .claude/skills/bestie
 
 # 或安装到全局（所有项目都能用）
-git clone https://github.com/however-yir/bestie-skill ~/.claude/skills/create-bestie
+mkdir -p ~/.claude/skills
+cp -R skills/bestie ~/.claude/skills/bestie
 ```
 
-### OpenClaw
+### Codex
 
 ```bash
-git clone https://github.com/however-yir/bestie-skill ~/.openclaw/workspace/skills/create-bestie
+mkdir -p ~/.codex/skills
+cp -R skills/bestie ~/.codex/skills/bestie
 ```
 
 ### 依赖（可选）

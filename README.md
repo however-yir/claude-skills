@@ -2,81 +2,130 @@
 
 [![CI](https://github.com/however-yir/claude-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/however-yir/claude-skills/actions/workflows/ci.yml)
 
-个人 Claude Code / Codex Skill 合集，原分散在 12 个独立仓库，现合并为统一入口。
+这是一个面向 **Claude Code / Codex** 的可安装、可维护 AI 工作流工具箱，不是普通资料合集。
 
-## 快速开始
+每个 skill 都应能被独立复制到本地 skills 目录，被 Claude Code 或 Codex 读取 `SKILL.md` 后触发使用；根目录负责统一索引、安装说明、状态标记和 CI 质量闸门。
+
+## Status Policy
+
+| 状态 | 含义 |
+|------|------|
+| `stable` | 可日常安装使用，README / SKILL.md / LICENSE 齐全，已有测试或明确为纯知识 skill。 |
+| `draft` | 可试用，但触发边界、依赖、测试或交付格式仍在迭代。 |
+| `archived` | 保留为迁移记录或参考项目，不作为当前主推安装项维护。 |
+
+## Install
+
+### 单个安装
+
+从本仓库根目录执行。Claude Code 默认使用 `~/.claude/skills`，Codex 本地 skills 目录常用 `~/.codex/skills`；如果你有自定义路径，把 `DEST` 改成对应目录即可。
 
 ```bash
-# 克隆仓库
-git clone https://github.com/however-yir/claude-skills.git
-cd claude-skills
+# Claude Code
+DEST="$HOME/.claude/skills"
+mkdir -p "$DEST"
+rm -rf "$DEST/ai-agent-workflow"
+cp -R skills/ai-agent-workflow "$DEST/ai-agent-workflow"
 
-# 安装单个 skill 到 Claude Code
-mkdir -p ~/.claude/skills
-cp -r skills/ai-agent-workflow ~/.claude/skills/ai-agent-workflow
-
-# 或安装顶层工具项目
-cp -r xhs-cover-studio ~/.claude/skills/xhs-cover-studio
+# Codex
+DEST="$HOME/.codex/skills"
+mkdir -p "$DEST"
+rm -rf "$DEST/ai-agent-workflow"
+cp -R skills/ai-agent-workflow "$DEST/ai-agent-workflow"
 ```
 
-## Skills 目录
+### 批量安装 `skills/*`
 
-| Skill | 用途 | 安装 | 测试 | 维护状态 |
-|-------|------|------|------|----------|
-| [ai-agent-workflow](skills/ai-agent-workflow) | AI Agent 工作流设计（Prompts、MCP、评估循环） | `cp -r skills/ai-agent-workflow ~/.claude/skills/` | 纯知识 skill，无代码测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [local-ai-systems-studio](skills/local-ai-systems-studio) | 本地 LLM 部署规划（MLX、GGUF、Ollama、vLLM） | `cp -r skills/local-ai-systems-studio ~/.claude/skills/` | 纯知识 skill，无代码测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [java-fullstack-engineering](skills/java-fullstack-engineering) | Spring Boot 全栈工程（SQL 调优、API 加固） | `cp -r skills/java-fullstack-engineering ~/.claude/skills/` | 纯知识 skill，无代码测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [github-job-showcase](skills/github-job-showcase) | GitHub 仓库转面试级 README / 作品集 | `cp -r skills/github-job-showcase ~/.claude/skills/` | 纯知识 skill，无代码测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [xiaohongshu-content-studio](skills/xiaohongshu-content-studio) | 小红书内容包生成（标题、钩子、正文、封面文案） | `cp -r skills/xiaohongshu-content-studio ~/.claude/skills/` | 纯知识 skill，无代码测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [office-doc-presentation](skills/office-doc-presentation) | 办公文档优化（Word/WPS/PPT/PDF 排版润色） | `cp -r skills/office-doc-presentation ~/.claude/skills/` | 纯知识 skill，无代码测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [digital-self](skills/digital-self) | 个人工作流蒸馏为可复用数字分身 | `cp -r skills/digital-self ~/.claude/skills/` | `cd skills/digital-self && pytest tests/` | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [bestie](skills/bestie) | 闺蜜/同事工作方法蒸馏为可调用 AI Skill | `cp -r skills/bestie ~/.claude/skills/` | `cd skills/bestie && pytest tests/` | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [last30days](skills/last30days) | 多平台社媒趋势研究（Reddit、X、YouTube、TikTok、Instagram） | `cp -r skills/last30days ~/.claude/skills/` | `cd skills/last30days && pytest tests/` | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [lunwen](skills/lunwen) | 中文毕业设计说明书撰写 + DOCX 交付 | `cp -r skills/lunwen ~/.claude/skills/` | `cd skills/lunwen && pytest tests -q` | ![](https://img.shields.io/badge/status-active-brightgreen) |
+```bash
+DEST="$HOME/.claude/skills"
+mkdir -p "$DEST"
 
-## 工具与项目
-
-| 项目 | 用途 | 安装 | 测试 | 维护状态 |
-|------|------|------|------|----------|
-| [last30days-cn-skill](last30days-cn-skill/) | 中国社媒趋势分析（X、微博、小红书、抖音） | `cp -r last30days-cn-skill ~/.claude/skills/` | `cd last30days-cn-skill && pytest tests/` | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [xhs-cover-studio](xhs-cover-studio/) | 小红书封面生成（58 品牌风格模板） | `cp -r xhs-cover-studio ~/.claude/skills/` | 需 Chrome + Python，无自动化测试 | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [bishe-manual-skill](bishe-manual-skill/) | 中文毕业设计说明书撰写 Skill | `cp -r bishe-manual-skill ~/.claude/skills/` | `cd bishe-manual-skill && pytest tests -q` | ![](https://img.shields.io/badge/status-active-brightgreen) |
-| [lz-docforge](lz-docforge/) | DocForge：基于 Docling 的中文文档处理工程化 | `cd lz-docforge && pip install -e .` | `cd lz-docforge && pytest tests/` | ![](https://img.shields.io/badge/status-active-brightgreen) |
-
-## Skill 类型说明
-
-本仓库包含两种类型的 skill：
-
-- **纯知识 skill**（ai-agent-workflow、local-ai-systems-studio 等）：仅包含 SKILL.md 规范和参考文档，通过 prompt 引导 Claude Code / Codex 的行为
-- **代码 skill**（bestie、last30days-cn-skill、lz-docforge 等）：包含 Python/Node.js 工具脚本、测试用例和 CI 流水线
-
-## 目录结构约定
-
+for skill in skills/*/; do
+  name="$(basename "$skill")"
+  rm -rf "$DEST/$name"
+  cp -R "$skill" "$DEST/$name"
+done
 ```
+
+把 `DEST` 换成 `$HOME/.codex/skills` 即可批量安装到 Codex 本地 skills 目录。
+
+### 项目内安装
+
+如果只想让当前项目使用这些 skills：
+
+```bash
+mkdir -p .claude/skills
+cp -R skills/github-job-showcase .claude/skills/github-job-showcase
+```
+
+### 卸载
+
+```bash
+# 卸载单个 skill
+rm -rf "$HOME/.claude/skills/ai-agent-workflow"
+rm -rf "$HOME/.codex/skills/ai-agent-workflow"
+
+# 卸载本仓库批量安装的 skills/*
+for skill in skills/*/; do
+  name="$(basename "$skill")"
+  rm -rf "$HOME/.claude/skills/$name"
+  rm -rf "$HOME/.codex/skills/$name"
+done
+```
+
+## Skills
+
+| Skill | 用途 | 安装源 | 测试 | 状态 |
+|-------|------|--------|------|------|
+| [ai-agent-workflow](skills/ai-agent-workflow) | AI Agent 工作流设计：prompts、MCP、评估循环、workflow spec | `skills/ai-agent-workflow` | 纯知识 skill；CI 包装检查 | `stable` |
+| [local-ai-systems-studio](skills/local-ai-systems-studio) | 本地 LLM 选型与部署规划：MLX、GGUF、Ollama、LM Studio、vLLM | `skills/local-ai-systems-studio` | 纯知识 skill；CI 包装检查 | `draft` |
+| [java-fullstack-engineering](skills/java-fullstack-engineering) | Spring Boot / MyBatis / SQL / API 加固与全栈工程任务 | `skills/java-fullstack-engineering` | 纯知识 skill；CI 包装检查 | `stable` |
+| [github-job-showcase](skills/github-job-showcase) | GitHub 仓库转求职 README、简历 bullets、面试项目叙事 | `skills/github-job-showcase` | 纯知识 skill；CI 包装检查 | `stable` |
+| [xiaohongshu-content-studio](skills/xiaohongshu-content-studio) | 小红书内容包：标题、钩子、正文、封面文案、轮播方向 | `skills/xiaohongshu-content-studio` | 纯知识 skill；CI 包装检查 | `stable` |
+| [office-doc-presentation](skills/office-doc-presentation) | Word / WPS / PPT / PDF 的结构优化、润色与汇报材料制作 | `skills/office-doc-presentation` | 纯知识 skill；CI 包装检查 | `draft` |
+| [digital-self](skills/digital-self) | 将个人材料、表达风格和工作判断蒸馏为数字分身 skill | `skills/digital-self` | `cd skills/digital-self && pytest tests/` | `draft` |
+| [bestie](skills/bestie) | 将搭子/同事的工作方法、表达风格沉淀为可调用 AI Skill | `skills/bestie` | `cd skills/bestie && pytest tests/` | `draft` |
+
+## Independent And Legacy Projects
+
+这些目录也保留在仓库中，但不属于根 CI 当前遍历的 `skills/*` 包装检查。
+
+| 项目 | 用途 | 安装/使用 | 测试 | 状态 |
+|------|------|-----------|------|------|
+| [last30days-cn-skill](last30days-cn-skill/) | 中国社媒趋势分析：X、微博、小红书、抖音 | `cp -R last30days-cn-skill ~/.claude/skills/last30days` | `cd last30days-cn-skill && pytest tests/` | `stable` |
+| [bishe-manual-skill](bishe-manual-skill/) | 中文毕业设计说明书撰写、样文仿写、DOCX 交付 | `cp -R bishe-manual-skill ~/.claude/skills/bishe-manual` | `cd bishe-manual-skill && pytest tests -q` | `stable` |
+| [xhs-cover-studio](xhs-cover-studio/) | 小红书封面生成，包含品牌风格 HTML/PNG 模板 | `cp -R xhs-cover-studio ~/.claude/skills/xhs-cover-studio` | 需 Chrome + Python，当前以人工验收为主 | `draft` |
+| [lz-docforge](lz-docforge/) | DocForge：基于 Docling 的中文文档处理工程化实验项目 | `cd lz-docforge && pip install -e .` | `cd lz-docforge && pytest tests/` | `archived` |
+
+## Skill Contract
+
+`skills/<skill-name>/` 目录约定：
+
+```text
 skills/<skill-name>/
-  SKILL.md        # 必须：YAML frontmatter（--- 分隔）
-  README.md       # 必须：用途、安装、测试说明
-  LICENSE         # 推荐：MIT
-  CONTRIBUTING.md # 可选：该 skill 的贡献指南
-  references/     # 可选：参考文档
+  SKILL.md        # 必须：YAML frontmatter（--- 分隔，至少包含 name / description）
+  README.md       # 必须：用途、触发场景、安装、测试、示例 prompt
+  LICENSE         # 必须：默认 MIT，或保留原项目 license
+  references/     # 可选：按需加载的参考文档
   examples/       # 可选：使用示例
-  tests/          # 可选：测试用例
+  tests/          # 可选：pytest 或 README 说明
   scripts/        # 可选：可执行脚本
   tools/          # 可选：工具函数
   prompts/        # 可选：Prompt 模板
 ```
 
-根 CI（`.github/workflows/ci.yml`）会在每次 push/PR 时自动检查 `skills/` 下每个子目录是否满足 SKILL.md frontmatter + README.md + LICENSE 要求。
+根 CI（[`.github/workflows/ci.yml`](.github/workflows/ci.yml)）会在 push / PR 时检查 `skills/*` 下每个 skill 是否满足：
 
-## 贡献
+- `SKILL.md` 存在并包含 YAML frontmatter
+- `README.md` 存在
+- `LICENSE` 存在
+- Python skill 的 `requirements.txt` 与 `tests/` 目录可被识别
 
-欢迎贡献！请阅读 [CONTRIBUTING.md](.github/CONTRIBUTING.md) 了解详情。
+有真实 pytest 测试的 skill 需要在修改后本地运行对应测试。
 
-本项目采用 [Contributor Covenant](.github/CODE_OF_CONDUCT.md) 行为准则。
+## Migration Notes
 
-## 原仓库迁移说明
-
-以下 12 个仓库已合并到本仓库：
+以下独立仓库已合并到本仓库：
 
 | 原仓库名 | 新位置 | 说明 |
 |----------|--------|------|
@@ -87,12 +136,22 @@ skills/<skill-name>/
 | `codex-skill-xiaohongshu-content-studio` | [skills/xiaohongshu-content-studio](skills/xiaohongshu-content-studio) | 小红书内容 |
 | `codex-skill-office-doc-presentation` | [skills/office-doc-presentation](skills/office-doc-presentation) | 办公文档 |
 | `digital-self-skill` | [skills/digital-self](skills/digital-self) | 数字分身 |
-| `bestie-skill` | [skills/bestie](skills/bestie) | 闺蜜 Skill |
+| `bestie-skill` | [skills/bestie](skills/bestie) | 搭子/同事 Skill |
 | `last30days-cn-skill` | [last30days-cn-skill](last30days-cn-skill/) | 社媒趋势分析 |
 | `xhs-cover-studio` | [xhs-cover-studio](xhs-cover-studio/) | 小红书封面 |
 | `bishe-manual-skill` | [bishe-manual-skill](bishe-manual-skill/) | 毕设说明书 |
-| `lz-docforge` | [lz-docforge](lz-docforge/) | 文档炼金炉 |
+| `lz-docforge` | [lz-docforge](lz-docforge/) | 文档处理实验项目 |
+
+## Contributing
+
+新增或修改 skill 时，请优先保持改动可安装、可验证：
+
+1. 更新 `SKILL.md` frontmatter 与触发描述。
+2. 更新对应 `README.md` 的 Skill Card。
+3. 保留或补齐 `LICENSE`。
+4. 如果包含脚本或工具，补充最小 pytest 或在 `tests/README.md` 写清人工验收方式。
+5. 本地复刻 CI 检查，并运行有测试的 skill。
 
 ## License
 
-本仓库采用 [MIT License](LICENSE)。各子 Skill 保持其原有 License，详见子目录 LICENSE 文件。
+本仓库采用 [MIT License](LICENSE)。各子 skill 保持其原有 License，详见子目录 `LICENSE` 文件。

@@ -5,6 +5,21 @@
 
 适用于 **Codex / Claude Code** 双平台的办公文档技能。聚焦 Word/WPS/PPT/PDF 的结构优化、排版润色与演示文稿制作。
 
+## Skill Card
+
+- 用途：创建或优化 Word、WPS、PPT、PDF、报告、提案、总结和项目汇报材料。
+- 触发场景：用户要整理笔记、截图、PDF 或会议纪要，输出正式文档、演示稿、项目报告或可提交材料。
+- 安装：从本仓库根目录执行。
+
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/office-doc-presentation ~/.claude/skills/office-doc-presentation
+cp -R skills/office-doc-presentation ~/.codex/skills/office-doc-presentation
+```
+
+- 测试：纯知识 skill；维护检查为 `SKILL.md` frontmatter、`README.md`、`LICENSE`。
+- 示例 prompt：`把这些会议纪要和截图整理成一份项目复盘 PPT 大纲，并给出每页标题和要点。`
+
 ## 目录
 
 - [1. 项目概述](#1-项目概述)
@@ -37,11 +52,13 @@
 
 ## 4. Quick Start
 
-**Codex**：在 skill 市场中搜索 `office-doc-presentation` 一键安装。
+**Claude Code / Codex**：从本合集仓库根目录复制 skill 目录。
 
-**Claude Code**：将本仓库克隆到 skills 目录或通过 plugin 加载：
-
-    git clone https://github.com/however-yir/codex-skill-office-doc-presentation.git
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/office-doc-presentation ~/.claude/skills/office-doc-presentation
+cp -R skills/office-doc-presentation ~/.codex/skills/office-doc-presentation
+```
 
 ## 5. License
 

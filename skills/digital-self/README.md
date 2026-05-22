@@ -36,6 +36,21 @@
 
 ---
 
+## Skill Card
+
+- 用途：将个人聊天记录、文档、邮件、截图和主观描述蒸馏成可调用的数字分身 skill。
+- 触发场景：用户要创建或更新自己的 AI 分身，导入个人材料，沉淀工作方法、表达风格、判断标准或版本化能力。
+- 安装：从本仓库根目录执行。
+
+```bash
+mkdir -p ~/.claude/skills ~/.codex/skills
+cp -R skills/digital-self ~/.claude/skills/digital-self
+cp -R skills/digital-self ~/.codex/skills/digital-self
+```
+
+- 测试：`cd skills/digital-self && pytest tests/`
+- 示例 prompt：`/create-digital-self 帮我用这些飞书记录和项目文档生成我的后端工程师分身。`
+
 ### 改编说明（License）
 
 本项目基于 [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill) 按 **MIT License** 改编。
@@ -84,18 +99,20 @@
 > **重要**：Claude Code 从 **git 仓库根目录** 的 `.claude/skills/` 查找 skill。请在正确位置执行。
 
 ```bash
-# 安装到当前项目（在 git 仓库根目录执行）
+# 安装到当前项目（在本合集仓库根目录执行）
 mkdir -p .claude/skills
-git clone https://github.com/however-yir/digital-self-skill .claude/skills/create-digital-self
+cp -R skills/digital-self .claude/skills/digital-self
 
 # 或安装到全局（所有项目都能用）
-git clone https://github.com/however-yir/digital-self-skill ~/.claude/skills/create-digital-self
+mkdir -p ~/.claude/skills
+cp -R skills/digital-self ~/.claude/skills/digital-self
 ```
 
-### OpenClaw
+### Codex
 
 ```bash
-git clone https://github.com/however-yir/digital-self-skill ~/.openclaw/workspace/skills/create-digital-self
+mkdir -p ~/.codex/skills
+cp -R skills/digital-self ~/.codex/skills/digital-self
 ```
 
 ### 依赖（可选）
