@@ -83,6 +83,7 @@ done
 | [github-job-showcase](skills/github-job-showcase) | GitHub 仓库转求职 README、简历 bullets、面试项目叙事 | `skills/github-job-showcase` | 纯知识 skill；CI 包装检查 | `stable` |
 | [xiaohongshu-content-studio](skills/xiaohongshu-content-studio) | 小红书内容包：标题、钩子、正文、封面文案、轮播方向 | `skills/xiaohongshu-content-studio` | 纯知识 skill；CI 包装检查 | `stable` |
 | [office-doc-presentation](skills/office-doc-presentation) | Word / WPS / PPT / PDF 的结构优化、润色与汇报材料制作 | `skills/office-doc-presentation` | 纯知识 skill；CI 包装检查 | `draft` |
+| [wc26-predict-text-only](skills/wc26-predict-text-only) | 纯文本重建 WC26 预测项目：基于 references 还原 ELO 版预测应用 | `skills/wc26-predict-text-only` | 纯知识 skill；CI 包装检查 | `stable` |
 | [digital-self](skills/digital-self) | 将个人材料、表达风格和工作判断蒸馏为数字分身 skill | `skills/digital-self` | `cd skills/digital-self && pytest tests/` | `draft` |
 | [bestie](skills/bestie) | 将搭子/同事的工作方法、表达风格沉淀为可调用 AI Skill | `skills/bestie` | `cd skills/bestie && pytest tests/` | `draft` |
 
@@ -137,6 +138,7 @@ skills/<skill-name>/
 | `codex-skill-office-doc-presentation` | [skills/office-doc-presentation](skills/office-doc-presentation) | 办公文档 |
 | `digital-self-skill` | [skills/digital-self](skills/digital-self) | 数字分身 |
 | `bestie-skill` | [skills/bestie](skills/bestie) | 搭子/同事 Skill |
+| `wc26-predict-text-only-skill` | [skills/wc26-predict-text-only](skills/wc26-predict-text-only) | WC26 纯文本重建 Skill |
 | `last30days-cn-skill` | [last30days-cn-skill](last30days-cn-skill/) | 社媒趋势分析 |
 | `xhs-cover-studio` | [xhs-cover-studio](xhs-cover-studio/) | 小红书封面 |
 | `bishe-manual-skill` | [bishe-manual-skill](bishe-manual-skill/) | 毕设说明书 |

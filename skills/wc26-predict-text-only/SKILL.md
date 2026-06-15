@@ -58,7 +58,8 @@ Follow this sequence exactly:
 
 Use these reference files:
 
-- `references/app-files.md`
+- `references/app-r.md`
+- `references/simulation-r.md`
 - `references/data-core.md`
 - `references/data-schedule.md`
 

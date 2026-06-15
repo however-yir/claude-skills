@@ -39,9 +39,10 @@ skills/wc26-predict-text-only/
   README.md
   LICENSE
   references/
-    app-files.md
+    app-r.md
     data-core.md
     data-schedule.md
+    simulation-r.md
 ```
 
 ## 使用方式
