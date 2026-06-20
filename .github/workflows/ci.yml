@@ -10,7 +10,7 @@ jobs:
   lint-skills:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Check SKILL.md frontmatter
         run: |
