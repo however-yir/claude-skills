@@ -1,7 +1,7 @@
 site_name: DocForge
-site_url: https://however-yir.github.io/lz-docforge/
-repo_name: however-yir/lz-docforge
-repo_url: https://github.com/however-yir/lz-docforge
+repo_name: however-yir/claude-skills
+repo_url: https://github.com/however-yir/claude-skills
+edit_uri: edit/main/lz-docforge/docs/
 
 theme:
   name: material
@@ -221,7 +221,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/however-yir/lz-docforge
+      link: https://github.com/however-yir/claude-skills/tree/main/lz-docforge
     - icon: fontawesome/brands/discord
       link: https://docling.ai/discord
     - icon: fontawesome/brands/linkedin

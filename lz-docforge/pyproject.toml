@@ -79,10 +79,10 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/however-yir/lz-docforge"
-repository = "https://github.com/however-yir/lz-docforge"
-issues = "https://github.com/however-yir/lz-docforge/issues"
-changelog = "https://github.com/however-yir/lz-docforge/blob/main/CHANGELOG.md"
+homepage = "https://github.com/however-yir/claude-skills/tree/main/lz-docforge"
+repository = "https://github.com/however-yir/claude-skills"
+issues = "https://github.com/however-yir/claude-skills/issues"
+changelog = "https://github.com/however-yir/claude-skills/blob/main/lz-docforge/CHANGELOG.md"
 
 [project.entry-points.docling]
 "docling_defaults" = "docling.models.plugins.defaults"
